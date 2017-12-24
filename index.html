@@ -1,0 +1,105 @@
+<html>  
+  <head>  
+  <style>  
+   .findbutton {background-color: red ; color: white;} 
+   .successbutton {background-color: yellow ; color: black;}
+   body {
+    background-color: green;
+   }
+   #table2{
+    color : purple;
+    background-color: orange;
+
+   }
+   h1{
+    font-family: "Castellar";
+   }
+   td {
+         text-align: center;
+         font-size: x-large;
+   }
+   #score{
+    color: white;
+   }
+   .button{
+    text-align: center;
+    cursor: pointer;
+   }
+   
+   .button2{
+    background-color: #4CAF50;
+    border-radius: 8px;
+    cursor: pointer;
+   }
+   .button2:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+  </style>  
+  <script type="text/javascript" src="game.js">  
+  
+  </script>  
+  </head>  
+  <body>
+  <h1> <center> Complete the Word</center></h1> <br>  
+  <table id="table1" cellspacing="0" cellpadding="0" style="border:none">  
+  <tr>  
+ <td><div id="dvword"></div> </td>  
+  </tr>  
+  </table>
+  <br/>  
+  <div>  
+  <button type="button" value="Start New Game" id="btnstart" class="button2" onclick="launcher(this)" />Start New Game</button>
+  <center> <font color="white"> Find Red Colored Letter </font></center>
+  <button onclick="SetInitials();" class="button2" align="right">Refresh</button>
+  </div>
+  <div align="right" id="score">SCORE:   00</div>
+  <br/><br/>  
+  <div id="dvcountdown"></div>  
+  <table id="table2" border='1' align="center" width="500" height="500">    
+   <tr>   
+    <td><div id="1" onclick="CheckMatch(this)" class="button">A</div></td>   
+    <td><div id="2" onclick="CheckMatch(this)" class="button">B</div></td>   
+    <td><div id="3" onclick="CheckMatch(this)" class="button">C</div></td>   
+    <td><div id="4" onclick="CheckMatch(this)" class="button">D</div></td>   
+    <td><div id="5" onclick="CheckMatch(this)" class="button">E</div></td>   
+   </tr>   
+   <tr>   
+    <td><div id="6" onclick="CheckMatch(this)" class="button">F</div></td>   
+    <td><div id="7" onclick="CheckMatch(this)" class="button">G</div></td>   
+    <td><div id="8" onclick="CheckMatch(this)" class="button">H</div></td>   
+    <td><div id="9" onclick="CheckMatch(this)" class="button">I</div></td>   
+    <td><div id="10" onclick="CheckMatch(this)" class="button">J</div></td>   
+   </tr>   
+   <tr>   
+    <td><div id="11" onclick="CheckMatch(this)" class="button">K</div></td>   
+    <td><div id="12" onclick="CheckMatch(this)" class="button">L</div></td>   
+    <td><div id="13" onclick="CheckMatch(this)" class="button">M</div></td>   
+    <td><div id="14" onclick="CheckMatch(this)" class="button">N</div></td>   
+    <td><div id="15" onclick="CheckMatch(this)" class="button">O</div></td>    
+   </tr>   
+   <tr>   
+    <td><div id="16" onclick="CheckMatch(this)" class="button">P</div></td>   
+    <td><div id="17" onclick="CheckMatch(this)" class="button">Q</div></td>   
+    <td><div id="18" onclick="CheckMatch(this)" class="button">R</div></td>   
+    <td><div id="19" onclick="CheckMatch(this)" class="button">S</div></td>   
+    <td><div id="20" onclick="CheckMatch(this)" class="button">T</div></td>    
+   </tr>   
+    <tr>   
+    <td><div id="21" onclick="CheckMatch(this)" class="button">U</div></td>   
+    <td><div id="22" onclick="CheckMatch(this)" class="button">V</div></td>   
+    <td><div id="23" onclick="CheckMatch(this)" class="button">W</div></td>   
+    <td><div id="24" onclick="CheckMatch(this)" class="button">X</div></td>   
+    <td><div id="25" onclick="CheckMatch(this)" class="button">Y</div></td>    
+   </tr>   
+     <tr>   
+    <td><div id="26" onclick="CheckMatch(this)" class="button">Z</div></td>   
+    <td><div id="27" onclick="CheckMatch(this)" class="button">A</div></td>   
+    <td><div id="28" onclick="CheckMatch(this)" class="button">B</div></td>   
+   <td><div id="29" onclick="CheckMatch(this)" class="button">C</div></td>   
+    <td><div id="30" onclick="CheckMatch(this)" class="button">D</div></td>    
+   </tr>   
+   </table>  
+   <div id="refresh"></div>
+   <div id="wc"> </div> 
+  </body>  
+  </html>  
