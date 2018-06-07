@@ -35,18 +35,46 @@
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
   </style>  
-  <script type="text/javascript" src="game_login.js">  
+  <script type="text/javascript" src="game_login_1.js">  
   
   </script>  
   </head>  
   <body>
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '{your-app-id}',
+      cookie     : true,
+      xfbml      : true,
+      version    : '{latest-api-version}'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+
+</script>
   <h1> <center> Complete the Word<br>
-  <button onclick="login();">Login Facebook</button>
+  
+</center></h1>
+ <br>
+ <div class="fb-login-button" data-width="1" data-max-rows="1" data-size="small" data-button-type="login_with" data-show-faces="true" data-auto-logout-link="true" data-use-continue-as="true"></div>
+ <fb:login-button 
+  scope="public_profile,email"
+  onlogin="checkLoginState();">
+</fb:login-button>
 
-        <br>
-
-        <button onclick="logout();">Logout from Facebook</button>
-</center></h1> <br>  
+ <br>  
   <table id="table1" cellspacing="0" cellpadding="0" style="border:none">  
   <tr>  
  <td><div id="dvword"></div> </td>  
