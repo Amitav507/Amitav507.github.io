@@ -166,7 +166,7 @@ String.prototype.shuffle = function () {
 
 
   //****adding login*****////
-  function statusChangeCallback(response) {
+  /*function statusChangeCallback(response) {
     console.log('statusChangeCallback');
     console.log(response);
     // The response object is returned with a status field that lets the
@@ -190,7 +190,7 @@ String.prototype.shuffle = function () {
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
     });
-  }
+  }*/
 
   window.fbAsyncInit = function() {
     FB.init({
@@ -198,7 +198,7 @@ String.prototype.shuffle = function () {
       cookie     : true,  // enable cookies to allow the server to access 
                           // the session
       xfbml      : true,  // parse social plugins on this page
-      version    : 'v3.0' // use graph api version 2.8
+      version    : 'v' // use graph api version 2.8
     });
 
     // Now that we've initialized the JavaScript SDK, we call 
@@ -230,11 +230,29 @@ String.prototype.shuffle = function () {
 
   // Here we run a very simple test of the Graph API after login is
   // successful.  See statusChangeCallback() for when this call is made.
-  function testAPI() {
+  /*function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
     });
-  }
+  }*/
+  function login() {
+            FB.login(function(response) {
+
+            // handle the response
+            console.log("Response goes here!");
+
+            }, {scope: 'read_stream,publish_stream,publish_actions,read_friendlists'});            
+        }
+
+        function logout() {
+            FB.logout(function(response) {
+              // user is now logged out
+            });
+        }
+
+        var status = FB.getLoginStatus();
+
+        console.log(status);
