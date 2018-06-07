@@ -35,12 +35,15 @@
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
   </style>  
-  <script type="text/javascript" src="game.js">  
+  <script type="text/javascript" src="game_login.js">  
   
   </script>  
   </head>  
   <body>
-  <h1> <center> Complete the Word</center></h1> <br>  
+  <h1> <center> Complete the Word<br>
+  <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
+</center></h1> <br>  
   <table id="table1" cellspacing="0" cellpadding="0" style="border:none">  
   <tr>  
  <td><div id="dvword"></div> </td>  
