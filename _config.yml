@@ -1,0 +1,49 @@
+# ---------------------------------------------------------
+# Site settings 
+# ---------------------------------------------------------
+title: "Amitava Das"
+tagline: "Energy Trading Analyst — GB Power Markets"
+description: >-
+  Portfolio of an Energy Trading Analyst specialising in GB wholesale power,
+  forward price forecasting, and driving commercial operations with data-driven insights .
+email: "amitava507@gmail.com"
+linkedin_url: "https://www.linkedin.com/in/amitava-das-77b411155/"
+github_url: "https://github.com/Amitav507"
+cv_file: "/assets/Amitava_Das_Quant_Analyst.pdf"    # drop your CV PDF into assets/ and update this if renamed
+
+# Base URL: leave blank if using a USERNAME.github.io repo.
+# If this is a project site (e.g. github.com/username/portfolio),
+# set this to "/portfolio" (no trailing slash) to match your repo name.
+baseurl: ""
+url: "https://Amitav507.github.io"
+
+# ---------------------------------------------------------
+# Build settings 
+# ---------------------------------------------------------
+markdown: kramdown
+permalink: pretty
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+  - scope:
+      path: ""
+    values:
+      layout: "page"
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag

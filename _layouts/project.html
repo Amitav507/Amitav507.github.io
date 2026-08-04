@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<div class="wrap" style="padding: 60px 0; max-width: 780px;">
+  <a href="{{ '/#projects' | relative_url }}" class="btn btn-ghost" style="margin-bottom: 32px; display:inline-block;">← Back to Projects</a>
+
+  <div class="eyebrow">{{ page.category | default: "Case Study" }}</div>
+  <h1 style="font-family: var(--font-display); font-size: 36px; line-height:1.15; margin-bottom: 10px;">{{ page.title }}</h1>
+
+  {% if page.tags %}
+  <div class="tags" style="margin-bottom: 30px;">
+    {% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+  </div>
+  {% endif %}
+
+  {% if page.image %}
+  <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title }}" class="project-hero-image">
+  {% endif %}
+
+  <article class="project-body">
+    {{ content }}
+  </article>
+
+  {% if page.repo_url %}
+  <a href="{{ page.repo_url }}" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top: 30px; display:inline-block;">View Code on GitHub</a>
+  {% endif %}
+</div>

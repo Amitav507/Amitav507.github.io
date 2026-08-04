@@ -1,0 +1,190 @@
+---
+layout: default
+title: Home
+---
+
+<header class="hero wrap">
+  <svg class="hero-chart" viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <line x1="0" y1="250" x2="500" y2="250" stroke="#28394A" stroke-width="1"/>
+    <line x1="0" y1="180" x2="500" y2="180" stroke="#28394A" stroke-width="1" stroke-dasharray="2 4"/>
+    <line x1="0" y1="110" x2="500" y2="110" stroke="#28394A" stroke-width="1" stroke-dasharray="2 4"/>
+    <text x="0" y="45" font-family="JetBrains Mono" font-size="11" fill="#8FA0AF">£/MWh</text>
+    <path d="M0,220 C60,205 90,150 140,160 C190,170 210,120 260,100 C310,80 340,95 390,60 C430,32 460,40 500,20"
+          fill="none" stroke="#F2B84B" stroke-width="2.5"/>
+    <path d="M0,230 C60,225 90,210 140,205 C190,200 210,180 260,175 C310,170 340,165 390,150 C430,138 460,132 500,120"
+          fill="none" stroke="#57D9C7" stroke-width="2" stroke-dasharray="5 5"/>
+    <circle cx="500" cy="20" r="4" fill="#F2B84B"/>
+    <circle cx="500" cy="120" r="4" fill="#57D9C7"/>
+    <text x="380" y="14" font-family="JetBrains Mono" font-size="10" fill="#F2B84B">FORECAST</text>
+    <text x="380" y="145" font-family="JetBrains Mono" font-size="10" fill="#57D9C7">BASE CASE</text>
+  </svg>
+
+  <div class="eyebrow">Open to opportunities — Trading desk / Commercial analysis roles </div>
+  <h1>Turning market data into <span class="accent">tradeable insight.</span></h1>
+  <p class="hero-sub">{{ site.description }}</p>
+  <div class="hero-cta">
+    <a href="#projects" class="btn btn-primary">View Case Studies</a>
+    <a href="{{ site.cv_file | relative_url }}" class="btn btn-ghost">Download CV</a>
+    <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+  </div>
+</header>
+
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>About</h2>
+      <span class="section-label">01 — Background</span>
+    </div>
+    <div class="about-grid">
+      <div class="about">
+        <p>
+          I have worked as an <b>Energy Trading Analyst at Drax Power</b>, supporting the GB wholesale power
+          trading desk with forward price forecasting, renewable-driven revenue modelling, and
+          reporting automation. My focus was on translating market fundamentals — generation mix,
+          interconnector flows, weather-driven renewable output — into forecasts that hold up
+          under real trading conditions.
+        </p>
+        <p>
+          Before moving into energy markets, I spent three years as a <b>Software Developer at
+          Qualcomm India</b>, building embedded software for commercial chipset platforms — a
+          background that shows up now in how I approach modelling: rigorous, reproducible,
+          and built to be automated rather than run by hand.
+        </p>
+        <p>
+          I hold an <b>MSc in Data Science and Analytics from the University of Leeds
+          (Distinction)</b> and a <b>B.Tech in Electronics &amp; Communication Engineering from
+          NIT Durgapur (First Class Distinction)</b>.
+        </p>
+      </div>
+      <div>
+        <div class="credential-card">
+          <div class="k">Education</div>
+          <div class="v">MSc Data Science &amp; Analytics</div>
+          <div class="d">University of Leeds — Distinction, 2024</div>
+        </div>
+        <div class="credential-card">
+          <div class="k">Education</div>
+          <div class="v">B.Tech Electronics &amp; Communication Engineering</div>
+          <div class="d">NIT Durgapur — First Class Distinction, 2020</div>
+        </div>
+        <div class="credential-card">
+          <div class="k">Certifications</div>
+          <div class="v">Energy Markets &amp; Trading · Intro to GB Energy Markets</div>
+          <div class="d">Energy UK</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Experience</h2>
+      <span class="section-label">02 — Timeline</span>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">SEP 2024 — MAY 2026</div>
+        <div class="tl-role">Energy Trading Analyst</div>
+        <div class="tl-org">Drax Power Ltd</div>
+        <div class="tl-desc">
+          Supporting the GB wholesale power trading desk with forward price forecasting,
+          renewable-driven revenue modelling, and reporting automation.
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">JUL 2020 — AUG 2023</div>
+        <div class="tl-role">Software Developer</div>
+        <div class="tl-org">Qualcomm India Pvt. Ltd.</div>
+        <div class="tl-desc">
+          Developed embedded software for commercial chipset platforms.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Case Studies</h2>
+      <span class="section-label">03 — Projects</span>
+    </div>
+    <div class="project-grid">
+      {% for project in site.projects %}
+      <a href="{{ project.url | relative_url }}" class="project-card">
+        {% if project.image %}
+        <img class="project-image" src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+        {% else %}
+        <svg class="project-spark" viewBox="0 0 200 44" xmlns="http://www.w3.org/2000/svg">
+          <path d="{{ project.sparkline | default: 'M0,25 C30,15 40,20 70,12 C100,4 110,20 140,14 C160,10 180,22 200,16' }}"
+                fill="none" stroke="{{ project.spark_color | default: '#F2B84B' }}" stroke-width="2"/>
+        </svg>
+        {% endif %}
+        {% if project.placeholder %}<span class="placeholder-tag">Replace with real project</span>{% endif %}
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.summary }}</p>
+        <div class="tags">
+          {% for tag in project.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Skills</h2>
+      <span class="section-label">04 — Toolkit</span>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="k">Languages &amp; Tools</div>
+        <ul>
+          <li>Python</li>
+          <li>SQL</li>
+          <li>R</li>
+          <li>Power BI</li>
+          <li>Excel</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <div class="k">Market Knowledge</div>
+        <ul>
+          <li>GB power &amp; gas market fundamentals</li>
+          <li>Forward curve forecasting</li>
+          <li>BESS optimisation</li>
+          <li>Time-series forecasting</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <div class="k">Certifications</div>
+        <ul>
+          <li>Energy Markets &amp; Trading — Energy UK</li>
+          <li>Intro to GB Energy Markets — Energy UK</li>
+          <li>Microsoft Excel Associate</li>
+          <li>IBM Data Science &amp; AI</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="contact-box">
+      <div>
+        <h2>Let's talk markets.</h2>
+        <p>Open to front office / commercial analyst, and energy trader roles across the UK.</p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:{{ site.email }}" class="btn btn-primary">Email Me</a>
+        <a href="{{ site.linkedin_url }}" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+        <a href="{{ site.github_url }}" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
