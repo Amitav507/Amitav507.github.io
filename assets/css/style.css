@@ -67,9 +67,10 @@ nav{
 }
 .hero-chart{
   position:absolute;
-  right:-40px; top:20px;
-  width:56%;
-  opacity:0.9;
+  right:-40px; top:60px;
+  width:40%;
+  opacity:0.85;
+  z-index:0;
 }
 .eyebrow{
   font-family:var(--font-mono);
