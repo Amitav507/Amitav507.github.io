@@ -6,7 +6,7 @@ tags: [Python, Time-Series, Stock Market]
 spark_color: "#F2B84B"
 sparkline: "M0,35 C30,30 40,10 70,15 C100,20 110,5 140,8 C160,10 180,3 200,5"
 repo_url: "https://github.com/Amitav507/Stock_prediction"
-order: 1
+order: 2
 image: "/assets/images/projects/stock_volume.png"
 # image_alt: "Dispatch strategy comparison chart"
 
