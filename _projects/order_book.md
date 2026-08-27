@@ -1,6 +1,6 @@
 ---
 title: "Order Book Simulator & Matching Engine"
-summary: "A limit order book and matching engine built from scratch in Python, with a market-making and execution layer — used to investigate where market-maker P&L actually comes from."
+summary: "A limit order book and matching engine built from scratch in Python, with a market-making and execution layer used to investigate where market-maker P&L actually comes from."
 category: "Case Study"
 tags: [Python, Market Microstructure, Matching Engine, Market Making]
 spark_color: "#F2B84B"
@@ -14,13 +14,13 @@ image: "/assets/images/projects/depth_ladder.png"
 ## The problem
 
 An energy trading analyst looks at the order book on a live trading screen but rarely looks *inside* it. GB power
-clears through three different mechanisms — continuous intraday on EPEX SPOT and N2EX
+clears through three different mechanisms : continuous intraday on EPEX SPOT and N2EX
 (price-time priority), day-ahead as a uniform-price auction, and the Balancing Mechanism as
-pay-as-bid — each with genuinely different incentives. It's easy to trade all three for years while
+pay-as-bid — each with genuinely different incentives. It's easy to know all three for years while
 treating the matching itself as a black box.
 
-This project opens the box: implementing the continuous double auction — the mechanism behind
-intraday power and equities on virtually every lit venue — from first principles, then using it to
+This project opens the box: implementing the continuous double auction, the mechanism behind
+intraday power and equities on virtually every lit venue ; from first principles, then using it to
 answer the question that actually matters on a desk: *where does the P&L come from, and what
 does execution cost?*
 
@@ -57,6 +57,7 @@ does execution cost?*
   individual outcomes frequently don't. None of it involving an informed trader.
 - Backed by **54 tests**, the most valuable being invariants: `cash + position × mark == total P&L`
   after every fill, and `abs(position) <= cap` on every step of a 400-step run.
+- Simulation only, synthetic data. Built with AI assistance. Views are my own.
 
 ## Tools
 
