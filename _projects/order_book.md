@@ -7,7 +7,7 @@ spark_color: "#F2B84B"
 sparkline: "M0,30 C25,28 40,32 60,20 C80,8 100,12 120,10 C140,8 160,4 180,6 200,3"
 repo_url: "https://github.com/Amitav507/order-book-simulator"
 order: -1
-# image: "/assets/images/projects/coverage-crossing.png"
+image: "/assets/images/projects/depth_ladder.png"
 # image_alt: "Realized market-maker P&L plotted against spread coverage ratio"
 ---
 
