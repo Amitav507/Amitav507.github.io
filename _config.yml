@@ -9,7 +9,7 @@ description: >-
 email: "amitava507@gmail.com"
 linkedin_url: "https://www.linkedin.com/in/amitava-das-77b411155/"
 github_url: "https://github.com/Amitav507"
-cv_file: "/assets/Amitava_Das_Quant_Analyst_1.pdf"    # drop your CV PDF into assets/ and update this if renamed
+cv_file: "/assets/Amitava_Das_Quant_Analyst.pdf"    # drop your CV PDF into assets/ and update this if renamed
 
 # Base URL: leave blank if using a USERNAME.github.io repo.
 # If this is a project site (e.g. github.com/username/portfolio),
