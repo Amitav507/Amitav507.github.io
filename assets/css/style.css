@@ -239,6 +239,25 @@ h2{
 .project-body blockquote{
   border-left:2px solid var(--teal); padding-left:16px; color:var(--text); margin-bottom:16px;
 }
+.project-figure{
+  margin:0 0 30px;
+  width:100%;
+}
+.project-figure img{
+  width:100%;
+  height:auto;
+  display:block;
+  border:1px solid var(--line);
+  border-radius:4px;
+  margin-bottom:8px;
+}
+.project-figure figcaption{
+  font-family:var(--font-mono);
+  font-size:12px;
+  color:var(--muted);
+  text-align:center;
+  letter-spacing:0.02em;
+}
 
 footer{
   padding:28px 0; text-align:center; color:var(--muted);
