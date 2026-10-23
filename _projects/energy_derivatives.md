@@ -1,4 +1,4 @@
-\---
+---
 
 title: "Energy \& Commodity Derivatives Pricing Library"
 summary: "An open-source Python library pricing energy and commodity options: Black-76 for options on forwards, analytic Greeks, implied vol, and Monte Carlo, with a section on exactly where the lognormal model breaks on power."
