@@ -6,7 +6,7 @@ tags: [Python, Optimisation, EV Fleet, Smart-charging]
 spark_color: "#57D9C7"
 sparkline: "M0,20 C25,8 45,32 70,18 C95,4 115,28 140,14 C160,4 180,22 200,10"
 repo_url: "https://github.com/Amitav507/Overnight_EV_optimiser"
-order: 1
+order: 4
 image: "/assets/images/projects/ev-bus-charging-optimiser.png"
 # image_alt: "Charging schedule optimisation output"
 ---

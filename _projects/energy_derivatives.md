@@ -1,14 +1,15 @@
----
-title: "Energy & Commodity Derivatives Pricing Library"
+\---
+
+title: "Energy \& Commodity Derivatives Pricing Library"
 summary: "An open-source Python library pricing energy and commodity options: Black-76 for options on forwards, analytic Greeks, implied vol, and Monte Carlo, with a section on exactly where the lognormal model breaks on power."
 category: "Case Study"
-tags: [Python, Derivatives Pricing, Black-76, Monte Carlo, Energy Markets]
-spark_color: "#57D9C7"
+tags: \[Python, Derivatives Pricing, Black-76, Monte Carlo, Energy Markets]
+spark\_color: "#57D9C7"
 sparkline: "M0,38 C25,36 45,30 65,26 C90,20 105,12 130,10 C155,8 175,5 200,4"
-repo_url: "https://github.com/Amitav507/energy-derivatives-pricing"
-order: -2
+repo\_url: "https://github.com/Amitav507/energy-derivatives-pricing"
+order: 1
 image: "/assets/images/projects/greek-profiles.png"
-image_alt: "Delta, gamma and vega profiles across strikes under Black-76"
+image\_alt: "Delta, gamma and vega profiles across strikes under Black-76"
 ---
 
 ## The problem
@@ -19,17 +20,17 @@ So this project builds the model energy markets actually use, Black-76, from fir
 
 ## What I built
 
-- A closed-form pricing core with no dependencies beyond the Python standard library: `Black76` for options on forwards and futures, `BlackScholes` for spot-based contracts with a continuous carry, full analytic Greeks, and a bracketed-Newton implied-volatility solver shared across both.
-- A Monte Carlo engine (numpy) with antithetic sampling on by default, returning a price with a standard error and a 95% confidence interval, built both to cross-check the closed form and to reach payoffs that have no closed form.
-- An optional market-data layer assembling real pricing inputs from free public sources: continuous futures from Yahoo Finance, rate curves from FRED, realized volatility from log returns, and EU day-ahead power from ENTSO-E.
-- A command-line pricer and an end-to-end demo across several underlyings.
+* A closed-form pricing core with no dependencies beyond the Python standard library: `Black76` for options on forwards and futures, `BlackScholes` for spot-based contracts with a continuous carry, full analytic Greeks, and a bracketed-Newton implied-volatility solver shared across both.
+* A Monte Carlo engine (numpy) with antithetic sampling on by default, returning a price with a standard error and a 95% confidence interval, built both to cross-check the closed form and to reach payoffs that have no closed form.
+* An optional market-data layer assembling real pricing inputs from free public sources: continuous futures from Yahoo Finance, rate curves from FRED, realized volatility from log returns, and EU day-ahead power from ENTSO-E.
+* A command-line pricer and an end-to-end demo across several underlyings.
 
 ## Getting the Greeks right, not just the price
 
 The headline figure is the Greek profiles across strikes, and three details in it matter more than the shapes.
 
 <figure class="project-figure">
-  <img src="{{ '/assets/images/projects/greek-profiles.png' | relative_url }}" alt="Delta, gamma and vega across strikes under Black-76">
+  <img src="{{ '/assets/images/projects/greek-profiles.png' | relative\_url }}" alt="Delta, gamma and vega across strikes under Black-76">
   <figcaption>Delta tops out at the discount factor; gamma and vega peak above the forward</figcaption>
 </figure>
 
@@ -41,12 +42,12 @@ There is a sign subtlety the library gets right that a naive shortcut does not. 
 
 The core discipline of the project is that correctness is never checked against the library's own formulas.
 
-Against a reference implementation: prices agree with `py_vollib` to 2.5e-14 across a 144-point grid of forward, strike, maturity and volatility, which is under two floating-point units, with the residual coming from the normal CDF (this library uses `math.erf`, py_vollib uses scipy).
+Against a reference implementation: prices agree with `py\_vollib` to 2.5e-14 across a 144-point grid of forward, strike, maturity and volatility, which is under two floating-point units, with the residual coming from the normal CDF (this library uses `math.erf`, py\_vollib uses scipy).
 
 Against simulation: Monte Carlo and the closed form are independent numerical routes to the same number, and the test asserts they agree within four standard errors, a statistical test rather than an arbitrary tolerance.
 
 <figure class="project-figure">
-  <img src="{{ '/assets/images/projects/mc-convergence.png' | relative_url }}" alt="Monte Carlo estimate converging on the Black-76 closed form as paths increase">
+  <img src="{{ '/assets/images/projects/mc-convergence.png' | relative\_url }}" alt="Monte Carlo estimate converging on the Black-76 closed form as paths increase">
   <figcaption>The 2-standard-error band contains the closed form at every path count: the test passing, as a picture</figcaption>
 </figure>
 
@@ -59,7 +60,7 @@ Against no-arbitrage identities: put-call parity in both spot and futures forms,
 Everything above assumes prices are lognormal, which is what makes `ln(F/K)` meaningful and guarantees a positive underlying. On European power that assumption is simply false, and not as a tail curiosity.
 
 <figure class="project-figure">
-  <img src="{{ '/assets/images/projects/power-negative-prices.png' | relative_url }}" alt="Dutch and German day-ahead power prices settling at or below zero, against a fitted lognormal">
+  <img src="{{ '/assets/images/projects/power-negative-prices.png' | relative\_url }}" alt="Dutch and German day-ahead power prices settling at or below zero, against a fitted lognormal">
   <figcaption>Negative and zero settlements are 4.3% of Dutch and 5.6% of German quarter-hours; the lognormal assigns them probability zero</figcaption>
 </figure>
 
@@ -69,4 +70,5 @@ The standard fix for negative prices is a Bachelier model, where the forward dif
 
 ## Tools
 
-`Python` , `Black-76 / Black-Scholes-Merton` , `Analytic Greeks & implied vol` , `Monte Carlo (antithetic sampling)` , `numpy` , `pytest / CI` , `ENTSO-E, FRED, Yahoo Finance market data`
+`Python` , `Black-76 / Black-Scholes-Merton` , `Analytic Greeks \& implied vol` , `Monte Carlo (antithetic sampling)` , `numpy` , `pytest / CI` , `ENTSO-E, FRED, Yahoo Finance market data`
+
